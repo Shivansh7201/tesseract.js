@@ -29,7 +29,7 @@ Video Real-time Recognition
   <a href="https://github.com/jeromewu/tesseract.js-video"><img alt="Tesseract.js Video" src="./docs/images/video-demo.gif"></a>
 </p>
 
-Tesseract.js works in the browser using [webpack](https://webpack.js.org/), esm, or plain script tags with a [CDN](#CDN) and on the server with [Node.js](https://nodejs.org/en/).
+Tesseract.js works in the browser using [webpack](https://webpack.js.org/), ESM, or plain script tags with a [CDN](#CDN) and on the server with [Node.js](https://nodejs.org/en/).
 After you [install it](#installation), using it is as simple as:
 
 ```javascript
@@ -45,14 +45,14 @@ import { createWorker } from 'tesseract.js';
 When recognizing multiple images, users should create a worker once, run `worker.recognize` for each image, and then run `worker.terminate()` once at the end (rather than running the above snippet for every image). 
 
 ## Installation
-Tesseract.js works with a `<script>` tag via local copy or CDN, with webpack via `npm` and on Node.js with `npm/yarn`.
+Tesseract.js works with a `<script>` tag via local copy or CDN, with webpack via `npm`, and on Node.js with `npm/yarn`.
 
 ### CDN
 ```html
 <!-- v5 -->
 <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
 ```
-After including the script the `Tesseract` variable will be globally available and a worker can be created using `Tesseract.createWorker`.
+After including the script, the `Tesseract` variable will be globally available, and a worker can be created using `Tesseract.createWorker`.
 
 Alternatively, an ESM build (used with `import` syntax) can be found at `https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.esm.min.js`. 
 
@@ -60,8 +60,8 @@ Alternatively, an ESM build (used with `import` syntax) can be found at `https:/
 
 **Tesseract.js v7 requires Node.js v16 or newer.** (Tesseract.js v6 requires Node.js v14 or newer.)
 
-```shell
-# For latest version
+``` shell
+# For the latest version
 npm install tesseract.js
 yarn add tesseract.js
 
@@ -73,7 +73,7 @@ yarn add tesseract.js@3.0.3
 ## Project Scope
 Tesseract.js aims to bring the [Tesseract](https://github.com/tesseract-ocr/tesseract) OCR engine (a separate project) to the browser and Node.js, and works by wrapping a [WebAssembly port](https://github.com/naptha/tesseract.js-core) of Tesseract.  This project does not modify core Tesseract features.  Most notably, **Tesseract.js does not support PDF files and does not modify the Tesseract recognition model to improve accuracy.**
 
-If your project requires features outside of this scope, consider the [Scribe.js library](https://github.com/scribeocr/scribe.js).  Scribe.js is an alternative library created to accommodate common feature requests that are outside of the scope of this repo.  Scribe.js includes improvements to the Tesseract recognition model and supports extracting text from PDF documents, among other features.  For more information see [Scribe.js vs. Tesseract.js](https://github.com/scribeocr/scribe.js/blob/master/docs/scribe_vs_tesseract.md).
+If your project requires features outside of this scope, consider the [Scribe.js library](https://github.com/scribeocr/scribe.js).  Scribe.js is an alternative library created to accommodate common feature requests that are outside of the scope of this repo.  Scribe.js includes improvements to the Tesseract recognition model and supports extracting text from PDF documents, among other features.  For more information, see [Scribe.js vs. Tesseract.js](https://github.com/scribeocr/scribe.js/blob/master/docs/scribe_vs_tesseract.md).
 
 ## Documentation
 
@@ -119,7 +119,7 @@ Version 5 changes are documented in [this issue](https://github.com/naptha/tesse
     - `createWorker` arguments changed
        - Setting non-default language and OEM now happens in `createWorker`
           - E.g. `createWorker("chi_sim", 1)`
-    - `worker.initialize` and `worker.loadLanguage` functions should be deleted from code
+    - `worker.initialize` and `worker.loadLanguage` functions should be deleted from the code
     - See [this issue](https://github.com/naptha/tesseract.js/issues/820) for full list
 
 Upgrading from v2 to v5?  See [this guide](https://github.com/naptha/tesseract.js/issues/771).
@@ -137,16 +137,16 @@ Version 4 includes many new features and bug fixes--see [this issue](https://git
 ## Contributing
 
 ### Development
-To run a development copy of Tesseract.js do the following:
+To run a development copy of Tesseract.js, do the following:
 ```shell
-# First we clone the repository
+# First, we clone the repository
 git clone https://github.com/naptha/tesseract.js.git
 cd tesseract.js
 
 # Then we install the dependencies
 npm install
 
-# And finally we start the development server
+# And finally, we start the development server
 npm start
 ```
 
@@ -154,14 +154,14 @@ The development server will be available at http://localhost:3000/examples/brows
 It will automatically rebuild `tesseract.min.js` and `worker.min.js` when you change files in the **src** folder.
 
 ### Building Static Files
-To build the compiled static files just execute the following:
-```shell
+To build the compiled static files, just execute the following:
+``` shell
 npm run build
 ```
 This will output the files into the `dist` directory.
 
 ### Run Tests
-**Always confirm the automated tests pass before submitting a pull request.**  To run the automated tests locally, run the following commands.
+**Always confirm that the automated tests pass before submitting a pull request.**  To run the automated tests locally, run the following commands.
 ```shell
 npm run lint
 npm run test
